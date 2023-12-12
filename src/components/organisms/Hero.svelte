@@ -11,9 +11,10 @@
 </script>
 
 <section id="home" class="wrapper ">
+	<div class="gradient"></div>
 	<div>
 		<h1>Jodhan</h1>
-		<h4>Passionate Web dev. <br />Full Stack</h4>
+		<h4>Passionate Web dev. <br /></h4>
 		<div class="socials">
 			<Socials />
 		</div>
