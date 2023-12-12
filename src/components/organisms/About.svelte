@@ -2,7 +2,6 @@
 	import RichPresence from '../molecules/RichPresence.svelte';
 	import Tooltip from '../atoms/Tooltip.svelte';
 
-	// i didnt write this idk
 	let getAge = () => {
 		let birthDate = new Date('2007/03/24');
 		const ageMs = Date.now() - birthDate.getTime();

@@ -10,8 +10,7 @@
 	}
 </script>
 
-<section id="home" class="wrapper gradient">
-	<HeroImage />
+<section id="home" class="wrapper ">
 	<div>
 		<h1>Jodhan</h1>
 		<h4>Passionate Web dev. <br />Full Stack</h4>
@@ -20,6 +19,7 @@
 		</div>
 		<Button side on:click={handleClick} on:keypress={handleClick}>Discover my work ↓</Button>
 	</div>
+	<HeroImage />
 </section>
 
 <style lang="scss">

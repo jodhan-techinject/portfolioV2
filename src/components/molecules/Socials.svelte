@@ -4,9 +4,9 @@
 </script>
 
 <div class="socials-container">
-	<Social icon="github" tip="xafn" link="https://github.com/xafn" />
+	<Social icon="github" tip="Jodhansajifab" link="https://github.com/Jodhansajifab" />
 	<Social icon="discord" tip={user.username} link={`https://discord.com/users/${user.id}`} />
-	<Social icon="email" tip="hey@afn.im" link="mailto:hey@afn.im" />
+	<Social icon="email" tip="jodhan.saji@gmail.com" link="mailto:jodhan.saji@gmail.com" />
 	<Social icon="kofi" tip="affan" link="https://ko-fi.com/affan" />
 </div>
 
