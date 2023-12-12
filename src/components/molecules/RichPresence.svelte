@@ -232,12 +232,12 @@
 
 		// dont ask me why these have to be duplicated because idk either
 		&[value]::-webkit-progress-value {
-			background-color: var(--yellow);
+			background-color: var(--orange);
 			border-radius: 10rem;
 		}
 
 		&[value]::-moz-progress-bar {
-			background-color: var(--yellow);
+			background-color: var(--orange);
 			border-radius: 10rem;
 		}
 	}

@@ -15,6 +15,7 @@
 			clicked = false;
 		}
 	}
+
 </script>
 
 <button

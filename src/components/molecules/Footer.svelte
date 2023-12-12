@@ -66,7 +66,7 @@
 
 		&:hover {
 			font-weight: 400;
-			background-color: var(--yellow);
+			background-color: var(--orange);
 			color: var(--neutral-one);
 			border-radius: 7px;
 			width: fit-content;

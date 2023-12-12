@@ -23,7 +23,7 @@
 		user-select: none;
 		margin: 0;
 		padding: 1rem 2rem;
-		color: var(--yellow);
+		color: var(--orange);
 		font-weight: 300;
 		font-size: 1.6rem;
 		font-family: var(--font-two);
@@ -59,7 +59,7 @@
 		content: '';
 		height: 100%;
 		width: 1.6rem;
-		background-color: var(--yellow);
+		background-color: var(--orange);
 
 		@media screen and (max-width: 868px) {
 			display: none;

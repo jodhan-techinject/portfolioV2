@@ -201,7 +201,7 @@
 	}
 
 	span {
-		color: var(--yellow);
+		color: var(--orange);
 	}
 
 	.grid {

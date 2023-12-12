@@ -31,7 +31,7 @@
     top: 0;
     padding: .20rem 0;
     z-index: 15;
-    background-color: black;
+    background-color: #000000;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     background-blend-mode: overlay;
@@ -50,8 +50,8 @@
       width: 100%;
     }
     .scrolled {
-      border-radius: 16px;
-      border-bottom: 1.5px solid var(--yellow-opacity);
+      border-radius: 500px;
+      border-bottom: 1.5px solid var(--orange-opacity);
       padding: 0.25rem 0;
       margin-top: 0.5rem;
       width: 37rem;

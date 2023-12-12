@@ -121,7 +121,7 @@
 
 		button:hover .icon-container,
 		.selected .icon-container {
-			background-color: var(--yellow-opacity);
+			background-color: var(--orange-opacity);
 		}
 	}
 </style>

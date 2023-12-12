@@ -78,8 +78,8 @@ body.stop-transitions * {
 :root {
   --white: #eed1c7;
   --white-two: hsl(0, 17%, 69%);
-  --yellow: #dba895;
-  --yellow-opacity: #dba8952a;
+  --orange: #d7714b;
+  --orange-opacity: #dba8952a;
   --bg-color: hsl(0, 11%, 8%);
   --neutral-one: #211c1c;
   --neutral-two: #211c1c75;
@@ -92,7 +92,7 @@ body.stop-transitions * {
 }
 
 ::selection {
-  background: var(--yellow-opacity);
+  background: var(--orange-opacity);
 }
 
 /*-----headings-----*/
