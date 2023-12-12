@@ -13,7 +13,6 @@
 	</div>
 </nav>
 
-<!-- this is the coolest thing ever wtf?? -->
 <svelte:window bind:scrollY={y} />
 
 <style lang="scss">
@@ -30,7 +29,7 @@
 		top: 0;
 		padding: 1.25rem 0;
 		z-index: 15;
-		background-color: var(--bg-color);
+		background-color: (var(--bg));
 		backdrop-filter: blur(15px);
 		-webkit-backdrop-filter: blur(15px);
 		background-blend-mode: overlay;
@@ -44,10 +43,11 @@
 	}
 	@media (min-width: 868px) {
 		div {
-			width: 40rem;
-			border-radius: 12px;
+			border-radius: 0;
+			width: 100%;
 		}
 		.scrolled {
+			border-radius: 1000px;
 			border-bottom: 1.5px solid var(--yellow-opacity);
 			padding: 0.5rem 0;
 			margin-top: 0.5rem;

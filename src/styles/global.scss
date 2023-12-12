@@ -36,18 +36,24 @@ body {
 }
 
 .gradient {
-  --speed: 2s;
+  --speed: 3s;
   --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
-  width: 200px;
-  height: 150px;
+  width: 500px;
+  height: 400px;
   position: absolute;
-  filter: blur(calc(150px / 3));
+  filter: blur(calc(200px / 1));
   background-image: linear-gradient(
                   hsl(158, 82%, 57%),
                   hsl(252, 82%, 57%)
   );
   animation: rotate var(--speed) var(--easing) alternate infinite;
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+@media (max-width: 800px) {
+  .gradient{
+    display: none;
+  }
 }
 
 
