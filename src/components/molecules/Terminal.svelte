@@ -12,11 +12,11 @@
 		<div class="terminal_prompt">
 			<span class="terminal_user">jodhan@admin:</span>
 			<span class="terminal_location">~</span>
-			<span class="terminal_bling">$</span>
+			<span class="terminal_bling">$ sudo apt upgrade portfolio</span>
 			<span class="terminal_cursor"></span>
 		</div>
 		<div class="terminal_output">
-			<pre class="output_text">Welcome to my Portfolio</pre>
+			<pre class="output_text"></pre>
 		</div>
 		<div class="terminal_input">
 			<input placeholder="Type a command..." class="input_text" type="text" />
