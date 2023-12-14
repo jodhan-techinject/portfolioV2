@@ -21,74 +21,77 @@
 	</div>
 	<div class="text">
 		<h2>bio</h2>
-		<p>
-			Hey there, I'm afn! :] I'm a <Tooltip tip={age}
-				><span>{Math.floor(Number(age))}</span></Tooltip
-			>
-			year old digital artist and graphic/UI designer based in Canada. I’ve taken art seriously since
-			<span>2017</span>, and have been doodling silly anime characters since <span>2020</span>.
-			Recently, however, I’ve grown a knack for programming. I like contributing to
-			<Tooltip tip="🤓">
-				<a href="https://github.com/xafn" target="_blank" rel="noreferrer">
-					<span>open source</span>
+		<p style="">
+			Hey there, I'm Jodhan Saji ! I'm a
+			<Tooltip tip={age}
+			><span>{Math.floor(Number(age))}</span></Tooltip>
+			year old Web Developer based in India. Computer Science and Engineering major from
+			<Tooltip tip="Lovely Professional University">
+				<a href="https://www.lpu.in/" target="_blank" rel="noreferrer">
+					<span>LPU,</span>
 				</a>
 			</Tooltip>
-			as a web developer, which is probably the reason why you've ended up here. Currently struggling
-			with Svelte and Typescript.
+			currently working in
+			<Tooltip tip="Tech Inject">
+				<a href="https://www.techinject.in/" target="_blank" rel="noreferrer">
+					<span>Tech Inject Global Solutions</span>
+				</a>
+			</Tooltip>
+			as Full Stack Web developer. Proficient in Svelte, React, Node, Firebase, Linux and Typescript.
 		</p>
 	</div>
 </section>
 
 <style lang="scss">
-	@import '../../styles/mixins.scss';
+  @import '../../styles/mixins.scss';
 
-	section {
-		margin-bottom: 6rem;
-		display: grid;
-		gap: 4.5rem;
-		grid-template-columns: 1fr 1fr;
-		align-items: center;
-	}
+  section {
+    margin-bottom: 6rem;
+    display: grid;
+    gap: 4.5rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
 
-	.text {
-		position: relative;
-		line-height: 1.75rem;
-	}
+  .text {
+    position: relative;
+    line-height: 1.75rem;
+  }
 
-	span {
-		font-weight: 400;
-		font-family: var(--font-two);
-		font-size: 0.9rem;
-		background-color: var(--neutral-one);
-		border-radius: 7px;
-		color: var(--orange);
-		padding: 0.2rem 0.5rem 0.2rem;
-		width: fit-content;
-	}
+  span {
+    font-weight: 400;
+    font-family: var(--font-two);
+    font-size: 0.9rem;
+    background-color: var(--neutral-one);
+    border-radius: 7px;
+    color: var(--orange);
+    padding: 0.2rem 0.5rem 0.2rem;
+    width: fit-content;
+  }
 
-	a {
-		text-decoration: none;
-	}
+  a {
+    text-decoration: none;
+  }
 
-	.text::before {
-		@include outlineText($content: 'JOD', $translateX: 97%, $translateY: -5%, $fontSize: 250px, $opacity: 0.22);
-	}
+  .text::before {
+    @include outlineText($content: 'JOD', $translateX: 97%, $translateY: -5%, $fontSize: 250px, $opacity: 0.22);
+  }
 
-	h2 {
-		display: none;
-		margin-top: 1rem;
-	}
+  h2 {
+    display: none;
+    margin-top: 1rem;
+  }
 
-	@media (max-width: 868px) {
-		section {
-			display: flex;
-			flex-direction: column;
-			align-items: normal;
-		}
+  @media (max-width: 868px) {
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: normal;
+    }
 
-		h2 {
-			display: block;
-			margin-bottom: 1rem;
-		}
-	}
+    h2 {
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
 </style>

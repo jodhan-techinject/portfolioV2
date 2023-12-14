@@ -1,282 +1,193 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-	import Tooltip from '../atoms/Tooltip.svelte';
-
-	import { user } from '../../util/discord';
-	import type { Spotify } from '../../util/types';
-
-	let activity = `@${user.username}`,
-		details = 'Fetching...',
-		activityImage = 'default.webp',
-		pulse = 30000,
-		activityNumber = 0,
-		state: string,
-		smallImage: string,
-		isSpotify: boolean,
-		isActivity: boolean,
-		songLink: string,
-		progress: number,
-		elapsed: string,
-		spotifyTotal: number,
-		currentSetInterval: ReturnType<typeof setInterval>,
-		currentRequestAnimationFrame: number;
-	// hasStatus = false,
-
-	const images: { [key: string]: string } = {
-		'CLIP STUDIO PAINT': 'https://i.imgur.com/IUVs3RB.png'
-	};
-
-	function localTime() {
-		state = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York' });
-	}
-
-	function musicProgress(spotify: Spotify) {
-		spotifyTotal = spotify.timestamps.end - spotify.timestamps.start;
-		progress = 100 - (100 * (spotify.timestamps.end - new Date().getTime())) / spotifyTotal;
-	}
-
-	function elapsedTime(timestampStart: number) {
-		let elapsedMs = new Date().getTime() - timestampStart;
-		// shrimple but hacky way of getting time from ms
-		elapsed = new Date(elapsedMs).toISOString().slice(11, 19) + ' elapsed';
-		if (elapsed.slice(0, 2) === '00') {
-			elapsed = elapsed.slice(-13);
-		}
-	}
-
-	// can't use requestAnimationFrame outside of onMount since its part of the window object
-	// need to use currentSetInterval at the beginning since the clock needs to be there before we connect to Lanyard
-	localTime();
-	currentSetInterval = setInterval(() => localTime(), 1000);
-
-	onMount(() => {
-		function connect() {
-			clearInterval(currentSetInterval); // don't need this anymore
-			let lanyard: WebSocket = new WebSocket('wss://api.lanyard.rest/socket');
-			lanyard.onopen = () => console.log('Synced with Discord rich presence!');
-
-			lanyard.onmessage = (e) => {
-				let json = JSON.parse(e.data);
-				let opcode = json.op;
-				let data = json.d;
-
-				if (opcode === 1) {
-					pulse = data.heartbeat_interval;
-					lanyard.send(
-						JSON.stringify({
-							op: 2,
-							d: { subscribe_to_id: user.id }
-						})
-					);
-				}
-
-				// requestAnimationFrame is much more performant than setTimeout
-				function tick() {
-					if (isSpotify) musicProgress(data.spotify);
-					else if (isActivity) elapsedTime(data.activities[activityNumber].timestamps.start);
-					else if (!isActivity) localTime();
-					currentRequestAnimationFrame = requestAnimationFrame(tick);
-				}
-
-				// keep the websocket connection alive
-				setInterval(() => {
-					lanyard.send(JSON.stringify({ op: 3 }));
-				}, pulse);
-
-				if (opcode === 0) {
-					isSpotify = data.listening_to_spotify;
-					isActivity = !!data.activities[0];
-					// console.log(isActivity, hasStatus);
-					// hasStatus = data.activities[0].name === 'Custom Status';
-
-					// // everything is so ugly oh my god why is there so many edge cases
-					// if (hasStatus && data.activities[1].name) {
-					// 	isActivity = true;
-					// 	activityNumber = 1;
-					// } else {
-					// 	isActivity = false;
-					// 	activityNumber = 0;
-					// }
-
-					if (isSpotify) {
-						({
-							song: activity,
-							artist: details,
-							album: state,
-							album_art_url: activityImage
-						} = data.spotify);
-
-						details = 'by ' + details.replace(/;/g, ',');
-						state = activity === state ? '' : 'on ' + state; // check if the song is a single
-						songLink = `https://open.spotify.com/track/${data.spotify.track_id}`;
-						smallImage = '';
-						cancelAnimationFrame(currentRequestAnimationFrame);
-						tick();
-					} else if (isActivity) {
-						({ name: activity, details, state } = data.activities[activityNumber]);
-						activityImage = data.activities[activityNumber].assets
-							? `https://cdn.discordapp.com/app-assets/${data.activities[activityNumber].application_id}/${data.activities[activityNumber].assets.large_image}.webp?size=512`
-							: images[activity] || 'question_mark.png';
-						smallImage = '';
-						if (data.activities[activityNumber].assets && data.activities[activityNumber].assets.small_image) {
-							smallImage = `https://cdn.discordapp.com/app-assets/${data.activities[activityNumber].application_id}/${data.activities[activityNumber].assets.small_image}.webp?size=512`;
-						}
-						cancelAnimationFrame(currentRequestAnimationFrame);
-						tick();
-					} else if (!isActivity) {
-						activity = `@${user.username}`;
-						details = data.discord_status.charAt(0).toUpperCase() + data.discord_status.slice(1);
-						details = details === 'Dnd' ? 'Do Not Disturb' : details;
-						activityImage = 'default.webp';
-						smallImage = '';
-						cancelAnimationFrame(currentRequestAnimationFrame);
-						tick();
-					}
-				}
-
-				// re-open websocket connection when it closes, e.g. when switched out of tab
-				lanyard.onclose = () => {
-					lanyard.close();
-					setTimeout(() => connect(), 2500);
-				};
-			};
-		}
-		connect();
-	});
-</script>
-
-<h2>activity</h2>
-<div class="contain">
-	<img src={activityImage} alt={activity} class="big" class:spin={isSpotify} />
-	{#if smallImage}
-		<img src={smallImage} alt={activity} class="small" />
-	{/if}
-	<div>
-		{#if isSpotify}
-			<a href={songLink} target="_blank" rel="noreferrer">
-				<Tooltip tip="Open Spotify">
-					<h3>{activity}</h3>
-				</Tooltip>
-			</a>
-		{:else}
-			<h3>{activity}</h3>
-		{/if}
-		<h5>{details || ''}</h5>
-		<h5>{state || ''}</h5>
-		{#if isSpotify}
-			<progress max="100" value={progress} />
-		{:else if isActivity}
-			<h5>{elapsed}</h5>
-		{/if}
+<div class="container">
+	<div class="terminal_toolbar">
+		<div class="butt">
+			<button class="btn btn-color"></button>
+			<button class="btn"></button>
+			<button class="btn"></button>
+		</div>
+		<p class="user">jodhan@admin: ~</p>
+		<div class="add_tab">+</div>
+	</div>
+	<div class="terminal_body">
+		<div class="terminal_prompt">
+			<span class="terminal_user">jodhan@admin:</span>
+			<span class="terminal_location">~</span>
+			<span class="terminal_bling">$</span>
+			<span class="terminal_cursor"></span>
+		</div>
+		<div class="terminal_output">
+			<pre class="output_text">Welcome to my Portfolio</pre>
+		</div>
+		<div class="terminal_input">
+			<input placeholder="Type a command..." class="input_text" type="text" />
+		</div>
 	</div>
 </div>
 
-<style lang="scss">
-	.contain {
-		display: flex;
-		gap: 2.25rem;
-		align-items: center;
-	}
 
-	a,
-	a:not(:hover) {
-		border-radius: 4px;
-		text-decoration: underline;
-		text-decoration-color: var(--bg-color);
-		transition: 0.3s var(--bezier-one);
-	}
+<style>
+    .container {
+        width: 350px;
+        height: 200px;
+        background: #1e1e1e;
+        font-family: Menlo, Consolas, monospace;
+        font-size: 14px;
+        color: #e6e6e6;
+        border-radius: 5px;
+        overflow: hidden;
+    }
 
-	h2 {
-		display: none;
-	}
+    .terminal_toolbar {
+        display: flex;
+        height: 30px;
+        align-items: center;
+        padding: 0 8px;
+        box-sizing: border-box;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: #212121;
+        justify-content: space-between;
+    }
 
-	a:hover {
-		text-decoration-color: var(--white);
-	}
+    .butt {
+        display: flex;
+        align-items: center;
+    }
 
-	.big {
-		height: 135px;
-		width: 135px;
-		border-radius: 20px;
-		display: relative;
-		user-select: none;
-		transition: all 0.3s var(--bezier-one);
-	}
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-right: 5px;
+        font-size: 8px;
+        height: 12px;
+        width: 12px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 100%;
+        background: linear-gradient(#7d7871 0%, #595953 100%);
+        text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 0px 1px 0px #41403a, 0px 1px 1px 0px #474642;
+    }
 
-	.small {
-		height: 40px;
-		width: 40px;
-		border-radius: 50%;
-		position: absolute;
-		transform: translate(275%, 150%);
-		outline: 6px solid var(--bg-color);
-		background-color: var(--bg-color);
-	}
+    .btn-color {
+        background: #ee411a;
+    }
 
-	progress {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		border: 0;
-		border-radius: 10rem;
-		margin: 0;
-		margin-top: 0.6rem;
-		background-color: var(--neutral-one);
-		height: 0.6rem;
-		overflow: hidden;
+    .btn:hover {
+        cursor: pointer;
+    }
 
-		&::-webkit-progress-bar {
-			background-color: var(--neutral-one);
-			border-radius: 10rem;
-		}
+    .btn:focus {
+        outline: none;
+    }
 
-		// dont ask me why these have to be duplicated because idk either
-		&[value]::-webkit-progress-value {
-			background-color: var(--orange);
-			border-radius: 10rem;
-		}
+    .butt--exit {
+        background: linear-gradient(#f37458 0%, #de4c12 100%);
+    }
 
-		&[value]::-moz-progress-bar {
-			background-color: var(--orange);
-			border-radius: 10rem;
-		}
-	}
+    .add_tab {
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 0 6px;
+        border-radius: 4px 4px 0 0;
+        border-bottom: none;
+        cursor: pointer;
+    }
 
-	@keyframes rotate {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
+    .user {
+        color: #d5d0ce;
+        margin-left: 6px;
+        font-size: 14px;
+        line-height: 15px;
+    }
 
-	.spin {
-		animation: rotate 40s linear infinite;
-		border-radius: 50%;
-	}
+    .terminal_body {
+        background: rgba(0, 0, 0, 0.6);
+        height: calc(100% - 30px);
+        padding-top: 2px;
+        margin-top: -1px;
+        font-size: 12px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
 
-	@media screen and (max-width: 868px) {
-		h2 {
-			display: block;
-			margin-bottom: 1rem;
-		}
-		div {
-			justify-content: left;
-		}
+    .terminal_prompt {
+        display: flex;
+        align-items: center;
+        padding: 4px;
+    }
 
-		.big {
-			height: 100px;
-			width: 100px;
-			border-radius: 17px;
-		}
+    .terminal_prompt span {
+        margin-left: 4px;
+    }
 
-		.spin {
-			border-radius: 50%;
-		}
+    .terminal_user {
+        color: #f9936d;
+    }
 
-		.small {
-			transform: translate(190%, 110%);
-		}
-	}
+    .terminal_location {
+        color: #4878c0;
+    }
+
+    .terminal_bling {
+        color: #dddddd;
+    }
+
+    .terminal_cursor {
+        display: block;
+        height: 14px;
+        width: 5px;
+        margin-left: 10px;
+        animation: curbl 1200ms linear infinite;
+    }
+
+    .terminal_output {
+        padding: 4px;
+        flex-grow: 1;
+        overflow-y: auto;
+    }
+
+    .output_text {
+        margin: 0;
+    }
+
+    .terminal_input {
+        padding: 4px;
+    }
+
+    .input_text {
+        width: 100%;
+        padding: 6px;
+        background: transparent;
+        border: none;
+        color: #e6e6e6;
+        caret-color: #1eff8e;
+    }
+
+    @keyframes curbl {
+        0% {
+            background: #ffffff;
+        }
+
+        49% {
+            background: #ffffff;
+        }
+
+        60% {
+            background: transparent;
+        }
+
+        99% {
+            background: transparent;
+        }
+
+        100% {
+            background: #ffffff;
+        }
+    }
+
 </style>
