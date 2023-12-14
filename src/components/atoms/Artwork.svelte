@@ -32,9 +32,9 @@
 
 <svelte:head>
 	{#if clicked}
-		<title>afn · {art}</title>
+		<title>Jodhan · {art}</title>
 	{:else}
-		<title>afn</title>
+		<title>Jodhan</title>
 	{/if}
 </svelte:head>
 
