@@ -10,9 +10,7 @@
 
 <style lang="scss">
 	button {
-		font-size: 100%;
 		border-radius: 16px;
-		border: none;
 		display: flex;
 		position: relative;
 		flex-direction: row;
