@@ -88,8 +88,8 @@
     }
 
     .add_tab {
-        border: 1px solid #fff;
-        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        color: rgba(255, 255, 255, 0.57);
         padding: 0 6px;
         border-radius: 4px 4px 0 0;
         border-bottom: none;

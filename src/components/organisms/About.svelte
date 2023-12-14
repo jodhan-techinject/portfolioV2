@@ -1,5 +1,5 @@
 <script>
-	import RichPresence from '../molecules/RichPresence.svelte';
+	import Terminal from '../molecules/Terminal.svelte';
 	import Tooltip from '../atoms/Tooltip.svelte';
 
 	let getAge = () => {
@@ -17,7 +17,7 @@
 
 <section id="about" class="wrapper">
 	<div>
-		<RichPresence />
+		<Terminal />
 	</div>
 	<div class="text">
 		<h2>bio</h2>
