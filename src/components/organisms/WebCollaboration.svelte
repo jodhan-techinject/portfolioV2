@@ -1,5 +1,5 @@
 <script>
-	import ArtGrid from '../../components/molecules/ArtGrid.svelte';
+	import WebGrid from '../molecules/WebGrid.svelte';
 	import Tooltip from '../atoms/Tooltip.svelte';
 </script>
 
@@ -9,7 +9,7 @@
 			<h2><span>Builds</span> : and Collaborations</h2>
 		</Tooltip>
 	</div>
-	<ArtGrid />
+	<WebGrid />
 </section>
 
 <style lang="scss">
