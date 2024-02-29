@@ -1,25 +1,25 @@
 <script>
-	import Artwork from '../atoms/Artwork.svelte';
+	import Website from '../atoms/Website.svelte';
 </script>
 
 <div class="grid-container">
 	<div class="grid">
-		<Artwork art="painted_red" tall />
-		<Artwork art="drowning" />
-		<Artwork art="BL1NG!" tall />
-		<Artwork art="811" />
-		<Artwork art="diverge" tall />
-		<Artwork art="FADE" tall />
-		<Artwork
-			art="flandre"
+		<Website website="pillup" tall />
+		<Website website="drowning" />
+		<Website website="BL1NG!" tall />
+		<Website website="811" />
+		<Website website="diverge" tall />
+		<Website website="FADE" tall />
+		<Website
+			website="flandre"
 			tall
 			shrink
 			commission
 			subtitle="Commissioned by Kevin T. · Do not use"
 		/>
-		<Artwork art="ribbons" tall />
-		<Artwork art="asumi" />
-		<Artwork art="doodle" />
+		<Website website="ribbons" tall />
+		<Website website="asumi" />
+		<Website website="doodle" />
 	</div>
 </div>
 

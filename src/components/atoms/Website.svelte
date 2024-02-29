@@ -5,7 +5,7 @@
 	export let tall = false;
 	export let shrink = false;
 	export let commission = false;
-	export let art = '';
+	export let website = '';
 	export let subtitle = 'Click anywhere to dismiss';
 
 	let clicked = false;
@@ -22,8 +22,8 @@
 	class="card"
 	class:tall
 	class:shrink
-	style="background-image:url(art/{art}.webp)"
-	aria-label={art}
+	style="background-image:url(websites/{website}.png)"
+	aria-label={website}
 	on:click={() => (clicked = true)}
 	on:keypress={() => (clicked = true)}
 />
@@ -32,7 +32,7 @@
 
 <svelte:head>
 	{#if clicked}
-		<title>Jodhan · {art}</title>
+		<title>Jodhan · {website}</title>
 	{:else}
 		<title>Jodhan</title>
 	{/if}
@@ -49,8 +49,8 @@
 		in:fly={{ y: 50, easing: quintOut, duration: 750 }}
 		out:fly={{ y: 50, easing: cubicOut, duration: 300 }}
 	>
-		<h3>{art}</h3>
-		<img src="art/{art}.webp" alt={art} />
+		<h3>{website}</h3>
+		<img src="websites/{website}.png" alt={website} />
 		<h6>{subtitle}</h6>
 	</div>
 {/if}
@@ -59,7 +59,7 @@
 	.card {
 		position: relative;
 		border: none;
-		padding: none;
+		padding: 0;
 		height: 100%;
 		width: 100%;
 		border-radius: 4px;

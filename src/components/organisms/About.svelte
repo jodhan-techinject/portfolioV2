@@ -5,8 +5,7 @@
 	let getAge = () => {
 		let birthDate = new Date('2000/09/15');
 		const ageMs = Date.now() - birthDate.getTime();
-		const preciseAge = (ageMs / 31536000000).toFixed(10);
-		return preciseAge;
+		return (ageMs / 31536000000).toFixed(10);
 	};
 
 	let age = getAge();

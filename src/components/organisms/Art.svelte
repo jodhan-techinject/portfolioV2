@@ -5,8 +5,8 @@
 
 <section>
 	<div class="wrapper" id="aw">
-		<Tooltip tip="Click on an artwork">
-			<h2><span>art</span>:work</h2>
+		<Tooltip tip="Click on an website">
+			<h2><span>Builds</span> : and Collaborations</h2>
 		</Tooltip>
 	</div>
 	<ArtGrid />
