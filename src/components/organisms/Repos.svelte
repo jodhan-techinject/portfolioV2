@@ -3,41 +3,41 @@
 	import type { Repo, PrimaryRepoJSON, SecondaryRepoJSON } from '../../util/types';
 
 	let repos: Repo[] = [{
-		description: '',
+		description: 'Wifi-deauther using esp8266 board and arduino ide',
 		forks: 0,
-		language: '',
-		languageColor: '',
-		name: '',
-		owner: '',
-		stars: 0,
-		url: ''
-	}, {
-		description: '',
+		language: 'C, C++',
+		languageColor: 'blue',
+		name: 'Wifi Deauther Esp8266',
+		owner: 'jodhan-techinject',
+		stars: 2,
+		url: 'https://github.com/jodhan-techinject/wifi-deauther-esp8266'
+	},{
+		description: 'A website for creating AI generated images using OPEN AI',
+		forks: 1,
+		language: 'MERN stack, Tailwind, Open AI, Cloudinary',
+		languageColor: 'red',
+		name: 'AirIMG',
+		owner: 'jodhan-techinject',
+		stars: 5,
+		url: 'https://github.com/jodhan-techinject/AirIMG'
+	},{
+		description: 'A website which helps to simplfy the creation of memes by combining random memes and the captions you provide.',
 		forks: 0,
-		language: '',
-		languageColor: '',
-		name: '',
-		owner: '',
+		language: 'HTML, CSS , JS',
+		languageColor: 'green',
+		name: 'Meme Generator',
+		owner: 'jodhan-techinject',
 		stars: 0,
-		url: ''
-	}, {
-		description: '',
+		url: 'https://github.com/jodhan-techinject/Meme-Generator'
+	},{
+		description: 'Keez keyboard store website',
 		forks: 0,
-		language: '',
-		languageColor: '',
-		name: '',
-		owner: '',
+		language: 'HTML, CSS , JS',
+		languageColor: 'green',
+		name: 'Keez Keyboards',
+		owner: 'jodhan-techinject',
 		stars: 0,
-		url: ''
-	}, {
-		description: '',
-		forks: 0,
-		language: '',
-		languageColor: '',
-		name: '',
-		owner: '',
-		stars: 0,
-		url: ''
+		url: 'https://github.com/jodhan-techinject/Keez-Keyboard-store'
 	}];
 </script>
 
