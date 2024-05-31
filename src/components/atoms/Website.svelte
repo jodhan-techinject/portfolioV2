@@ -7,6 +7,7 @@
 	export let websiteTitle = '';
 	export let technologies = '';
 	export let websiteLink = '';
+	export let shrink = false;
 	export let subtitle = 'Click on the image to navigate to the website';
 
 	let clicked = false;
@@ -23,6 +24,7 @@
 	aria-label={website}
 	class="card"
 	class:tall
+	class:shrink
 	on:click={() => (clicked = true)}
 	on:keypress={() => (clicked = true)}
 	style="background-image:url(websites/{website}.png)"

@@ -6,7 +6,7 @@
 	<div class="grid">
 		<Website tall technologies="React Native, Node.js, Express.js, postgresql" website="pill-up" websiteLink="https://www.pillup.com/" websiteTitle="Pill Up" />
 		<Website website="ikon-living" websiteLink="https://www.ikonliving.in/" websiteTitle="Ikon Living" technologies="Svelte Kit, Tailwind" />
-		<Website tall website="tech-inject" websiteLink="https://www.techinject.in/" websiteTitle="Tech Inject" technologies="Svelte Kit, Bootstrap, JQuery"/>
+		<Website shrink tall website="tech-inject" websiteLink="https://www.techinject.in/" websiteTitle="Tech Inject" technologies="Svelte Kit, Bootstrap, JQuery"/>
 		<Website website="careplanet" websiteLink="https://www.careplanetlifesciences.com/" websiteTitle="Care Planet Life Sciences" technologies="HTML, CSS, JS"/>
 		<Website tall website="vitaminx" websiteLink="https://www.vitaminx.in/" websiteTitle="Vitamin X" technologies="Firebase, Svelte Kit, Tailwind"/>
 		<Website tall website="pradeep" websiteTitle="Pradeep Publications" websiteLink="https://pradeep-client.vercel.app/" technologies="Firebase, Svelte Kit, Tailwind"/>
