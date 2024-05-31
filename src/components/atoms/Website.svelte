@@ -66,7 +66,7 @@
     padding: 0;
     height: 100%;
     width: 100%;
-    border-radius: 4px;
+    border-radius: 20px;
     overflow: hidden;
     background: var(--neutral-one);
     transition: all 0.3s var(--bezier-one);
