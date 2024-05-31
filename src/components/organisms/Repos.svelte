@@ -103,7 +103,7 @@
   .title {
     display: flex;
     justify-content: center;
-    margin-top: 0;
+    margin-top: 3rem;
 
     @media (max-width: 868px) {
       justify-content: left;
@@ -175,7 +175,7 @@
 
   h2 {
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   #star {

@@ -19,7 +19,7 @@
 
 	h2 {
 		display: inline-block;
-		margin-bottom: 1rem;
+		margin-bottom: 2.5rem;
 	}
 
 	div {
