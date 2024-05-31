@@ -1,23 +1,50 @@
 [
     {
-        "name": "afterst0rm",
-        "icon": "/supporters/afterst0rm.webp",
-        "message":
-            "I wish I could do more, but I appreciate your work and creativity. You'll achieve great highs, brother. Big hugs from your Brazilian friend."
+        "name": "Svelte Kit",
+        "icon": "/technologies/svelte.png"
     },
     {
-        "name": "Kevin T.",
-        "icon": "/supporters/kevin_t.webp",
-        "message": "hi"
+        "name": "Firebase",
+        "icon": "/technologies/firebase.png"
     },
     {
-        "name": "Taku",
-        "icon": "/supporters/taku.webp",
-        "message": "3 Covfefe"
+        "name": "Typescript",
+        "icon": "/technologies/typescript.png"
     },
     {
-        "name": "notIvan",
-        "icon": "/supporters/notIvan.webp",
-        "message": "i forgot ☠️"
+        "name": "React and Native",
+        "icon": "/technologies/react.png"
+    },
+    {
+        "name": "Tailwind ",
+        "icon": "/technologies/tailwind-css.svg"
+    },
+    {
+        "name": "Bootstrap",
+        "icon": "/technologies/bootstrap.png"
+    }
+    ,{
+        "name": "Node JS ",
+        "icon": "/technologies/node js.png"
+    }
+    ,{
+        "name": "Express JS",
+        "icon": "/technologies/Express.png"
+    }
+    ,{
+        "name": "Mongo DB",
+        "icon": "/technologies/mongodb.png"
+    }
+    ,{
+        "name": "Github",
+        "icon": "/technologies/github.png"
+    }
+    ,{
+        "name": "Photoshop",
+        "icon": "/technologies/ps.png"
+    }
+    ,{
+        "name": "Linux",
+        "icon": "/technologies/linux.png"
     }
 ]
