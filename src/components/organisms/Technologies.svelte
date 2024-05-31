@@ -8,7 +8,7 @@
 	</div>
 
 	<div class="tech-stack">
-		{#each technologies as { name, icon, message }}
+		{#each technologies as { name, icon }}
 			<div class="supporter">
 				<img src={icon} alt={name} />
 				<h6>{name}</h6>
@@ -22,7 +22,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: 0;
+		margin-top: 5rem;
 		margin-bottom: 1.5rem;
 
 		@media (max-width: 868px) {
@@ -42,7 +42,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2rem;
-		margin-bottom: 3rem;
+		margin-bottom: 6rem;
 
 		@media (max-width: 868px) {
 			justify-content: left;

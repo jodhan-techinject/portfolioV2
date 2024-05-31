@@ -36,6 +36,18 @@
         "icon": "/technologies/mongodb.png"
     }
     ,{
+        "name": "Figma",
+        "icon": "/technologies/figma.png"
+    }
+    ,{
+        "name": "My SQL",
+        "icon": "/technologies/sql.png"
+    }
+    ,{
+        "name": "Postgres SQL",
+        "icon": "/technologies/postgres.png"
+    }
+    ,{
         "name": "Github",
         "icon": "/technologies/github.png"
     }
