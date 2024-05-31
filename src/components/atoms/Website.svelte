@@ -79,6 +79,7 @@
     -webkit-transform: translate3d(0, 0, 1px);
     -webkit-backface-visibility: hidden;
 
+
     &:hover {
       transform: translateY(-1px);
       box-shadow: 0px 15px 25px -10px rgba(0, 0, 0, 0.25);
@@ -87,6 +88,16 @@
     @media screen and (max-width: 868px) {
       border-radius: 0;
     }
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(193, 90, 43, 0.44));
   }
 
   .img-modal {
