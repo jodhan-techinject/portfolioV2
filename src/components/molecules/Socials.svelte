@@ -6,7 +6,7 @@
 	<Social icon="github.svg" tip="Jodhansajifab" link="https://github.com/Jodhansajifab" />
 	<Social icon="linkedin.svg" tip="jodhansaji" link="https://www.linkedin.com/in/jodhansaji/?originalSubdomain=in" />
 	<Social icon="email.svg" tip="jodhan.saji@gmail.com" link="mailto:jodhan.saji@gmail.com" />
-	<Social icon="resume.png" tip="resume-jodhan" link="" />
+	<Social icon="resume.png" tip="resume-jodhan" link="/pdfs/resume.pdf" />
 </div>
 
 <style>
