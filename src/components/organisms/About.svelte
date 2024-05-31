@@ -15,7 +15,7 @@
 </script>
 
 <section id="about" class="wrapper">
-	<div>
+	<div class="terminal">
 		<Terminal />
 	</div>
 	<div class="text">
@@ -43,6 +43,10 @@
 
 <style lang="scss">
   @import '../../styles/mixins.scss';
+
+  .terminal{
+		display: block;
+	}
 
   section {
     margin-bottom: 6rem;
@@ -82,6 +86,10 @@
   }
 
   @media (max-width: 868px) {
+    .terminal{
+      display: none;
+    }
+
     section {
       display: flex;
       flex-direction: column;
