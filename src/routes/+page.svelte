@@ -4,7 +4,7 @@
 	import About from '../components/organisms/About.svelte';
 	import WebCollaboration from '../components/organisms/WebCollaboration.svelte';
 	import Repos from '../components/organisms/Repos.svelte';
-	import Supporters from '../components/organisms/Supporters.svelte';
+	import Supporters from '../components/organisms/Technologies.svelte';
 	import Footer from '../components/molecules/Footer.svelte';
 </script>
 
