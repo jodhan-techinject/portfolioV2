@@ -3,8 +3,6 @@
 	import { cubicOut, quintOut } from 'svelte/easing';
 
 	export let tall = false;
-	export let shrink = false;
-	export let commission = false;
 	export let website = '';
 	export let websiteTitle = '';
 	export let technologies = '';
@@ -24,7 +22,6 @@
 <button
 	aria-label={website}
 	class="card"
-	class:shrink
 	class:tall
 	on:click={() => (clicked = true)}
 	on:keypress={() => (clicked = true)}
@@ -45,7 +42,6 @@
 	<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 	<div
 		class="img-modal"
-		oncontextmenu={commission ? 'return false;' : ''}
 		tabindex="0"
 		on:click={() => (clicked = false)}
 		on:keypress={() => (clicked = false)}

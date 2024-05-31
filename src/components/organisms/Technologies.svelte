@@ -1,15 +1,14 @@
 <script lang="ts">
-	import supporters from '../../util/supporters.json'
+	import technologies from '../../util/technologies.json'
 </script>
 
 <section class="wrapper">
 	<div class="title">
-		<h2>supporters</h2>
-		<p>Thank you!</p>
+		<h2>Tech Stack</h2>
 	</div>
 
-	<div class="supporters">
-		{#each supporters as { name, icon, message }}
+	<div class="tech-stack">
+		{#each technologies as { name, icon }}
 			<div class="supporter">
 				<img src={icon} alt={name} />
 				<h6>{name}</h6>
@@ -23,7 +22,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: 0;
+		margin-top: 5rem;
 		margin-bottom: 1.5rem;
 
 		@media (max-width: 868px) {
@@ -38,12 +37,12 @@
 		gap: 0.5rem;
 	}
 
-	.supporters {
+	.tech-stack {
 		justify-content: center;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2rem;
-		margin-bottom: 3rem;
+		margin-bottom: 6rem;
 
 		@media (max-width: 868px) {
 			justify-content: left;
