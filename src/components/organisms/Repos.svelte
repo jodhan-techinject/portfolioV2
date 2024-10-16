@@ -11,7 +11,7 @@
 		owner: 'jodhan-techinject',
 		stars: 2,
 		url: 'https://github.com/jodhan-techinject/wifi-deauther-esp8266'
-	},{
+	}, {
 		description: 'A website for creating AI generated images using OPEN AI',
 		forks: 1,
 		language: 'MERN stack, Tailwind, Open AI, Cloudinary',
@@ -20,30 +20,32 @@
 		owner: 'jodhan-techinject',
 		stars: 5,
 		url: 'https://github.com/jodhan-techinject/AirIMG'
-	},{
-		description: 'A website which helps to simplfy the creation of memes by combining random memes and the captions you provide.',
-		forks: 0,
-		language: 'HTML, CSS , JS',
-		languageColor: 'green',
-		name: 'Meme Generator',
-		owner: 'jodhan-techinject',
-		stars: 0,
-		url: 'https://github.com/jodhan-techinject/Meme-Generator'
-	},{
-		description: 'Keez keyboard store website',
-		forks: 0,
-		language: 'HTML, CSS , JS',
-		languageColor: 'green',
-		name: 'Keez Keyboards',
-		owner: 'jodhan-techinject',
-		stars: 0,
-		url: 'https://github.com/jodhan-techinject/Keez-Keyboard-store'
-	}];
+	}
+		// 	{
+		// 	description: 'A website which helps to simplfy the creation of memes by combining random memes and the captions you provide.',
+		// 	forks: 0,
+		// 	language: 'HTML, CSS , JS',
+		// 	languageColor: 'green',
+		// 	name: 'Meme Generator',
+		// 	owner: 'jodhan-techinject',
+		// 	stars: 0,
+		// 	url: 'https://github.com/jodhan-techinject/Meme-Generator'
+		// },{
+		// 	description: 'Keez keyboard store website',
+		// 	forks: 0,
+		// 	language: 'HTML, CSS , JS',
+		// 	languageColor: 'green',
+		// 	name: 'Keez Keyboards',
+		// 	owner: 'jodhan-techinject',
+		// 	stars: 0,
+		// 	url: 'https://github.com/jodhan-techinject/Keez-Keyboard-store'
+		// }
+	];
 </script>
 
 <section class="wrapper" id="code">
 	<div class="title">
-		<h2><span>code</span>:work</h2>
+		<h2><span>coded</span>:projects</h2>
 	</div>
 	<div class="grid">
 		{#if repos}

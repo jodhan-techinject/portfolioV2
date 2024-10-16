@@ -23,7 +23,7 @@
 		on:mousemove={enterRotate3D}
 		on:mouseleave={leaveRotate3D}
 		class="img"
-		style:background-image="url(/jodhan.jpg)"
+		style:background-image="url(/jodhan-1.png)"
 		style:transform="perspective(500px) {zoom ? 'scale(1.05)' : ''} rotateX({xRotation}deg) rotateY({yRotation}deg)"
 	/>
 </div>
@@ -51,7 +51,7 @@
     align-self: start;
     background-color: var(--neutral-one);
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
 
     @media (max-width: 768px) {
