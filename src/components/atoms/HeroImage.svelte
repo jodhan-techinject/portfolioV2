@@ -43,8 +43,8 @@
 
   .img {
     border-radius: 48px;
-    width: 425px;
-    height: 400px;
+    width: 400px;
+    height: 350px;
     z-index: 1;
     display: block;
     transition: width 0.4s var(--bezier-one), transform 0.4s var(--bezier-one);

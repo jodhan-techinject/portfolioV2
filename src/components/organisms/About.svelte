@@ -1,6 +1,8 @@
 <script>
 	import Terminal from '../molecules/Terminal.svelte';
 	import Tooltip from '../atoms/Tooltip.svelte';
+	import Globe from '../molecules/Globe.svelte';
+	import OrdbitingCirclesGroup from '../molecules/OrdbitingCirclesGroup.svelte';
 
 	let getAge = () => {
 		let birthDate = new Date('2000/09/15');
@@ -15,8 +17,11 @@
 </script>
 
 <section id="about" class="wrapper">
-	<div class="terminal">
-		<Terminal />
+	<!--	<div class="terminal">-->
+	<!--		<Terminal />-->
+	<!--	</div>-->
+	<div class="circles">
+				<OrdbitingCirclesGroup />
 	</div>
 	<div class="text">
 		<h2>bio</h2>
@@ -44,9 +49,9 @@
 <style lang="scss">
   @import '../../styles/mixins.scss';
 
-  .terminal{
-		display: block;
-	}
+  .circles {
+    display: block;
+  }
 
   section {
     margin-bottom: 6rem;
@@ -86,7 +91,7 @@
   }
 
   @media (max-width: 868px) {
-    .terminal{
+    .circles {
       display: none;
     }
 
