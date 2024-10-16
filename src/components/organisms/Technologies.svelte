@@ -3,11 +3,11 @@
 </script>
 
 <section class="wrapper">
-	<div class="title">
-		<h2 class="text-5xl">Tech Stack</h2>
+	<div class="title mt-[5rem] md:mt-[10rem] mb-[1.5rem] md:mb-[3rem]">
+		<h2 class="text-5xl"><span class="text-[#d7714b]">Tech</span> Stack</h2>
 	</div>
 
-	<div class="tech-stack">
+	<div class="tech-stack mb-[6rem] md:mb-[10rem]">
 		{#each technologies as { name, icon }}
 			<div class="tech">
 				<img src={icon} alt={name} />
@@ -22,8 +22,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: 5rem;
-		margin-bottom: 1.5rem;
 
 		@media (max-width: 868px) {
 			align-items: normal;
@@ -42,7 +40,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2rem;
-		margin-bottom: 6rem;
 	}
 
 	img {

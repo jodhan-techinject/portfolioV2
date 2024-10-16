@@ -2,7 +2,7 @@
 	import Website from '../atoms/Website.svelte';
 </script>
 
-<div class="grid-container">
+<div class="grid-container mb-[5rem] md:mb-[10rem]">
 	<div class="grid">
 		<Website tall technologies="React Native, Node.js, Express.js, postgresql" website="pill-up" websiteLink="https://www.pillup.com/" websiteTitle="Pill Up" />
 		<Website technologies="Svelte Kit, Tailwind, Firebase" website="rameem" websiteLink="https://rameem.vercel.app/" websiteTitle="Rameem" />
@@ -55,6 +55,5 @@
   .grid-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 4rem;
   }
 </style>
