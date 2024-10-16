@@ -166,5 +166,8 @@
       grid-row: span 1 / auto;
       background-position: top;
     }
+		.wide{
+      grid-column: span 1 / auto;
+    }
   }
 </style>
