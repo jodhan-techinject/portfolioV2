@@ -3,6 +3,7 @@
 	import { cubicOut, quintOut } from 'svelte/easing';
 
 	export let tall = false;
+	export let wide = false;
 	export let website = '';
 	export let websiteTitle = '';
 	export let technologies = '';
@@ -24,6 +25,7 @@
 	aria-label={website}
 	class="card"
 	class:tall
+	class:wide
 	class:shrink
 	on:click={() => (clicked = true)}
 	on:keypress={() => (clicked = true)}
@@ -97,7 +99,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(193, 90, 43, 0.44));
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.78));
   }
 
   .img-modal {
@@ -150,6 +152,10 @@
   .tall {
     grid-row: span 2 / auto;
   }
+
+	.wide{
+    grid-column: span 2 / auto;
+	}
 
 	.py-2{
 		padding-bottom: .5rem;
