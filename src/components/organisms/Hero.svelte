@@ -14,7 +14,7 @@
 <section id="home" class="wrapper ">
 	<div>
 		<h1 class="text-8xl">Jodhan</h1>
-		<p class="text-xl">Web Alchemist. <br /> Full Stack.</p>
+		<p class="text-2xl">Web Dev.</p>
 		<div class="socials">
 			<Socials />
 		</div>
