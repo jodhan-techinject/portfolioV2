@@ -125,7 +125,7 @@
       max-height: 83vh;
       height: auto;
       max-width: 86vw;
-      border-radius: 2vh;
+      border-radius: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
