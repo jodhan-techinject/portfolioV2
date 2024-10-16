@@ -22,7 +22,7 @@
 	<div
 		on:mousemove={enterRotate3D}
 		on:mouseleave={leaveRotate3D}
-		class="img"
+		class="img rounded-3xl"
 		style:background-image="url(/jodhan-1.png)"
 		style:transform="perspective(500px) {zoom ? 'scale(1.05)' : ''} rotateX({xRotation}deg) rotateY({yRotation}deg)"
 	/>
@@ -42,9 +42,8 @@
   }
 
   .img {
-    border-radius: 48px;
     width: 400px;
-    height: 350px;
+    height: 340px;
     z-index: 1;
     display: block;
     transition: width 0.4s var(--bezier-one), transform 0.4s var(--bezier-one);
