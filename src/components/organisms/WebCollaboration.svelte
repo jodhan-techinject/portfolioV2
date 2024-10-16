@@ -6,7 +6,7 @@
 <section>
 	<div class="wrapper" id="aw">
 		<Tooltip tip="Click on any website">
-			<h2><span>Builds</span> and Collaborations</h2>
+			<h2 class="text-5xl"><span>Builds</span> and Collaborations</h2>
 		</Tooltip>
 	</div>
 	<WebGrid />

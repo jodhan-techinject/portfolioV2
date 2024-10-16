@@ -13,8 +13,8 @@
 
 <section id="home" class="wrapper ">
 	<div>
-		<h1>Jodhan</h1>
-		<h4>Web Alchemist. <br /> Full Stack.</h4>
+		<h1 class="text-8xl">Jodhan</h1>
+		<p class="text-xl">Web Alchemist. <br /> Full Stack.</p>
 		<div class="socials">
 			<Socials />
 		</div>

@@ -4,7 +4,7 @@
 
 <section class="wrapper">
 	<div class="title">
-		<h2>Tech Stack</h2>
+		<h2 class="text-5xl">Tech Stack</h2>
 	</div>
 
 	<div class="tech-stack">

@@ -51,7 +51,6 @@
     }
     .scrolled {
       border-radius: 500px;
-      border-bottom: 1.5px solid var(--orange-opacity);
       padding: 0.25rem 0;
       margin-top: 0.5rem;
       width: 37rem;

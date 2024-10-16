@@ -45,7 +45,7 @@
 
 <section class="wrapper" id="code">
 	<div class="title">
-		<h2><span>coded</span>:projects</h2>
+		<h2 class="text-5xl"><span>coded</span>:projects</h2>
 	</div>
 	<div class="grid">
 		{#if repos}
