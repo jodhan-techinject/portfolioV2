@@ -45,9 +45,9 @@
 
 <section class="wrapper" id="code">
 	<div class="title">
-		<h2><span>coded</span>:projects</h2>
+		<h2 class="text-5xl"><span>coded</span>:projects</h2>
 	</div>
-	<div class="grid">
+	<div class="grid mb-[5rem] md:mb-[10rem]">
 		{#if repos}
 			{#each repos as { name, description, owner, forks, stars, language, languageColor, url }}
 				<a href={url} target="_blank" rel="noreferrer">
@@ -214,7 +214,6 @@
     align-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 3rem;
     position: relative;
 
     &:before {

@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import '../styles/global.scss';
 	import '../styles/fonts.scss';
+	import "../app.css";
 	import Cursor from '../components/atoms/Cursor.svelte';
 
 	let loading = true;
