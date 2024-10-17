@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { Repo, PrimaryRepoJSON, SecondaryRepoJSON } from '../../util/types';
+	import BorderBeam from '../molecules/BorderBeam.svelte';
 
 	let repos: Repo[] = [{
 		description: 'Wifi-deauther using esp8266 board and arduino ide',
@@ -49,9 +50,10 @@
 	</div>
 	<div class="grid mb-[5rem] md:mb-[10rem]">
 		{#if repos}
-			{#each repos as { name, description, owner, forks, stars, language, languageColor, url }}
+			{#each repos as { name, description, owner, forks, stars, language, languageColor, url }, index}
 				<a href={url} target="_blank" rel="noreferrer">
-					<div class="repo-card">
+					<div class="repo-card relative">
+					<BorderBeam size={100} duration={10} delay={index > 0 ? 0 : -5} />
 						<div id="top-part">
 							<div class="info">
 								<img
