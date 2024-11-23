@@ -43,7 +43,6 @@
 	}
 
 	img {
-		border-radius: 50%;
 		height: 64px;
 		width: 64px;
 	}

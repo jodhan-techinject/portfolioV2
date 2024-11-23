@@ -23,7 +23,7 @@
 		on:mousemove={enterRotate3D}
 		on:mouseleave={leaveRotate3D}
 		class="img rounded-3xl"
-		style:background-image="url(/jodhan-1.png)"
+		style:background-image="url(/jodhan.jpg)"
 		style:transform="perspective(500px) {zoom ? 'scale(1.05)' : ''} rotateX({xRotation}deg) rotateY({yRotation}deg)"
 	/>
 </div>
