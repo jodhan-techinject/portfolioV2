@@ -1,10 +1,27 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import type { Repo, PrimaryRepoJSON, SecondaryRepoJSON } from '../../util/types';
+	import type { Repo } from '../../util/types';
 	import BorderBeam from '../molecules/BorderBeam.svelte';
 
 	let repos: Repo[] = [{
-		description: 'Wifi-deauther using esp8266 board and arduino ide',
+		description: 'A website for creating AI generated images using OPEN AI and share to the community',
+		forks: 1,
+		language: 'MERN, Tailwind, Stable Diffusion, Cloudinary',
+		languageColor: 'red',
+		name: 'AIR-IMG',
+		owner: 'jodhan-techinject',
+		stars: 5,
+		url: 'https://github.com/jodhan-techinject/AirIMG'
+	}, {
+		description: 'Map Nest is an interactive map-focused web application designed to explore various geographic and architectural data across different locations. ',
+		forks: 4,
+		language: 'Map Libre, Svelte-Kit, Tailwind, TypeScript',
+		languageColor: 'purple',
+		name: 'MAP NEST',
+		owner: 'jodhan-techinject',
+		stars: 3,
+		url: 'https://github.com/jodhan-techinject/map-nest'
+	}, {
+		description: 'Wifi-deauther using esp8266 board and arduino IDE',
 		forks: 0,
 		language: 'C, C++',
 		languageColor: 'blue',
@@ -13,35 +30,15 @@
 		stars: 2,
 		url: 'https://github.com/jodhan-techinject/wifi-deauther-esp8266'
 	}, {
-		description: 'A website for creating AI generated images using OPEN AI',
+		description: 'Simple Tic Tac Toe using vanilla JS',
 		forks: 1,
-		language: 'MERN stack, Tailwind, Open AI, Cloudinary',
-		languageColor: 'red',
-		name: 'AirIMG',
+		language: 'JS, HTML, CSS',
+		languageColor: 'green',
+		name: 'TIC TAC TOE',
 		owner: 'jodhan-techinject',
-		stars: 5,
-		url: 'https://github.com/jodhan-techinject/AirIMG'
-	}
-		// 	{
-		// 	description: 'A website which helps to simplfy the creation of memes by combining random memes and the captions you provide.',
-		// 	forks: 0,
-		// 	language: 'HTML, CSS , JS',
-		// 	languageColor: 'green',
-		// 	name: 'Meme Generator',
-		// 	owner: 'jodhan-techinject',
-		// 	stars: 0,
-		// 	url: 'https://github.com/jodhan-techinject/Meme-Generator'
-		// },{
-		// 	description: 'Keez keyboard store website',
-		// 	forks: 0,
-		// 	language: 'HTML, CSS , JS',
-		// 	languageColor: 'green',
-		// 	name: 'Keez Keyboards',
-		// 	owner: 'jodhan-techinject',
-		// 	stars: 0,
-		// 	url: 'https://github.com/jodhan-techinject/Keez-Keyboard-store'
-		// }
-	];
+		stars: 0,
+		url: 'https://github.com/jodhan-techinject/tic-toc-toe'
+	}];
 </script>
 
 <section class="wrapper" id="code">
@@ -53,7 +50,7 @@
 			{#each repos as { name, description, owner, forks, stars, language, languageColor, url }, index}
 				<a href={url} target="_blank" rel="noreferrer">
 					<div class="repo-card relative">
-					<BorderBeam size={100} duration={10} delay={index > 0 ? 0 : -5} />
+						<BorderBeam size={100} duration={10} delay={index > 0 ? 0 : -5} />
 						<div id="top-part">
 							<div class="info">
 								<img
@@ -68,25 +65,27 @@
 							</div>
 						</div>
 						<div>
-							<h3>{name}</h3>
+							<h3 class="py-2 text-orange-300">{name}</h3>
 							<h6>{description}</h6>
 						</div>
-						<div class="info-container">
-							<div class="info">
-								<span class="dot" style="background-color: {languageColor}" />
-								<h6>{language}</h6>
+						<div class="flex justify-between items-center info-container pt-4">
+							<div class="info ">
+								<span class="dot  mr-3" style="background-color: {languageColor}" />
+								<h2 class=" italic !mb-0">{language}</h2>
 							</div>
-							<div class="info">
-								{#if stars}
-									<img src="icons/star.svg" id="star" alt="star" />
-									<h6>{stars}</h6>
-								{/if}
-							</div>
-							<div class="info">
-								{#if forks}
-									<img src="icons/fork.svg" id="fork" alt="fork" />
-									<h6>{forks}</h6>
-								{/if}
+							<div class="flex gap-4">
+								<div class="info">
+									{#if stars}
+										<img src="icons/star.svg" id="star" alt="star" />
+										<h6>{stars}</h6>
+									{/if}
+								</div>
+								<div class="info">
+									{#if forks}
+										<img src="icons/fork.svg" id="fork" alt="fork" />
+										<h6>{forks}</h6>
+									{/if}
+								</div>
 							</div>
 						</div>
 					</div>
